@@ -1,0 +1,38 @@
+{
+    "name": "jcaillot/laminas-owasp-headers",
+    "description": "Laminas listener; adds Owasp headers to the response",
+    "type": "library",
+    "license": "MIT",
+    "keywords": [
+        "laminas",
+        "owasp",
+        "headers"
+    ],
+    "require": {
+        "php": "^7.3 || ~8.0.0",
+        "laminas/laminas-mvc": "^3.1.1",
+        "laminas/laminas-di": "^3.2.2",
+        "container-interop/container-interop": "^1.2"
+    },
+    "require-dev": {
+        "laminas/laminas-developer-tools": "^2.1.1",
+        "laminas/laminas-test": "^3.4.2",
+        "phpstan/phpstan": "^0.12.99",
+        "friendsofphp/php-cs-fixer": "^3.2"
+    },
+    "autoload": {
+        "psr-4": {
+            "Chaman\\": "src"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Tests\\Chaman\\": "test"
+        }
+    },
+    "scripts": {
+        "phpstan": "php vendor/bin/phpstan analyse src test",
+        "phpcs": "php vendor/bin/php-cs-fixer fix src"
+    }
+
+}
