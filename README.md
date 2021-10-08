@@ -8,21 +8,21 @@
 
 ## Installation
 
- `composer require jcaillot/laminas-owasp-headers`
+`composer require jcaillot/laminas-owasp-headers`
 
-In <Your Module>/config/module.config.php add the following declarations:
+In &lt;Your Module&gt;/config/module.config.php, add the following declarations:
 
 ```php 
 
     'service_manager' => [
             'invokables' => [
                  ...
-                 Listener\OwaspHeadersListener::class => Listener\OwaspHeadersListener::class
+                 Chaman\Listener\OwaspHeadersListener::class => Chaman\Listener\OwaspHeadersListener::class
             ],
      ],
     'listeners' => [
             ...
-            Listener\OwaspHeadersListener::class
+            Chaman\Listener\OwaspHeadersListener::class
     ],
    
     

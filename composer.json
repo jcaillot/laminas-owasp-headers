@@ -1,6 +1,6 @@
 {
     "name": "jcaillot/laminas-owasp-headers",
-    "description": "Laminas listener; adds Owasp headers to the response",
+    "description": "Laminas listener; adds Owasp headers to the HTTP response",
     "type": "library",
     "license": "MIT",
     "keywords": [

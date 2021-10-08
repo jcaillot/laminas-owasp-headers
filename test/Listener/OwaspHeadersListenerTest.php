@@ -23,25 +23,26 @@ class OwaspHeadersListenerTest extends TestCase
     {
         $listener = new OwaspHeadersListener();
         $eventManager = $this->createMock(EventManagerInterface::class);
+        $eventManager->method('attach')->willReturn(function () {
+        });
         $listener->attach($eventManager);
         $reflector = new ReflectionClass(OwaspHeadersListener::class);
         $prop = $reflector->getProperty('listeners');
         $prop->setAccessible(true);
-        $this->assertNotEmpty($prop->getValue($listener));
+        $listenerList = $prop->getValue($listener);
+        $this->assertNotEmpty($listenerList);
+        $this->assertCount(1, $listenerList);
     }
 
     public function testAddOwaspHeaders()
     {
-        $event = $this->createEvent();
-
         $listener = new OwaspHeadersListener();
+        $event = $this->createEvent();
         $listener->addOwaspHeaders($event);
-
         /** @var Response $response */
         $response = $event->getApplication()->getResponse();
         /** @var Headers $headers */
         $headers = $response->getHeaders();
-
         $this->assertCount(2, $headers);
     }
 
