@@ -17,12 +17,12 @@ In &lt;Your Module&gt;/config/module.config.php, add the following declarations:
     'service_manager' => [
             'invokables' => [
                  ...
-                 Chaman\Listener\OwaspHeadersListener::class => Chaman\Listener\OwaspHeadersListener::class
+                 \Chaman\Listener\OwaspHeadersListener::class => \Chaman\Listener\OwaspHeadersListener::class
             ],
      ],
     'listeners' => [
             ...
-            Chaman\Listener\OwaspHeadersListener::class
+            \Chaman\Listener\OwaspHeadersListener::class
     ],
    
     
